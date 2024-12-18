@@ -1,0 +1,207 @@
+/* Header Styling */
+.header {
+    background-color: #D3D3D3; /* Light grey background */
+    width: 100%;
+    position: fixed; /* Fix the header at the top */
+    top: 0;
+    left: 0;
+    z-index: 10; /* Ensures the header stays on top of the mobile menu */
+}
+
+/* Logo Styling */
+header img {
+    width: 150px;
+    max-width: 100%;
+}
+
+/* Hamburger Menu (Three Lines) */
+.hamburger {
+    display: none; /* Hidden by default for larger screens */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 1001; /* Stays above the mobile menu */
+}
+
+.hamburger span {
+    background-color: black;
+    height: 3px;
+    width: 30px;
+    border-radius: 2px;
+    display: block;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Transform Hamburger to X */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+    position: fixed;
+    top: 100px; /* Starts just below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px); /* Takes up the remaining screen height below the header */
+    background-color: white; /* White background for mobile menu */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile Menu Items */
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    margin: 15px 0;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+/* Media Query for Smaller Screens (Mobile Phones) */
+@media (max-width: 767px) {
+    /* Show hamburger menu on small screens */
+    .hamburger {
+        display: flex; /* Show hamburger icon on small screens */
+    }
+
+    /* Hide desktop navigation on small screens */
+    nav.d-none.d-md-flex {
+        display: none;
+    }
+
+    /* Show mobile menu when needed */
+    .mobile-menu {
+        display: none;
+    }
+}
+
+
+/* Media Query for Tablets and Desktop (768px and larger) */
+@media (min-width: 768px) {
+    /* Show normal navigation menu on tablets and larger screens */
+    nav.d-none.d-md-flex {
+        display: block; /* Show the normal desktop navigation */
+    }
+
+    /* Hide hamburger menu on tablets and larger screens */
+    .hamburger {
+        display: none;
+    }
+
+    /* Hide mobile menu on tablets and larger screens */
+    .mobile-menu {
+        display: none;
+    }
+}
+
+.service-card {
+    min-height: 80px; /* Adjust based on your needs */
+}
+
+/* Ensure consistent image sizes */
+.project-img {
+    height: 200px; /* Adjust as needed */
+    object-fit: cover; /* Crops the image proportionally to fill the space */
+}
+
+/* Equal height cards */
+.card {
+    height: 100%; /* Ensures cards stretch equally */
+}
+
+.card-body {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+/* Adjust paragraph text styling */
+.card-body p {
+    margin: 0; /* Remove extra spacing around paragraphs */
+    font-size: 1rem; /* Standardize font size */
+}
+/* Project Section Container */
+#projects .card {
+    height: 100%; /* Ensure all cards take equal height */
+    display: flex; /* Flexbox ensures card content stretches equally */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Card Images */
+.project-img {
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images crop proportionally and fill space */
+    width: 100%; /* Ensure images stretch to full card width */
+}
+
+/* Card Body Styling */
+.card-body {
+    flex: 1; /* Take remaining height to balance all cards */
+    display: flex;
+    align-items: center; /* Vertically center text */
+    justify-content: center; /* Horizontally center text */
+    padding: 15px; /* Add space around text */
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Responsive Adjustment for Smaller Screens */
+@media (max-width: 768px) {
+    .project-img {
+        height: 150px; /* Reduce image height for smaller devices */
+    }
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Adjust the width of the arrow buttons */
+}
+
+.carousel-item {
+    position: relative; /* Ensure positioning context */
+}
+
+.blockquote-footer {
+    position: absolute;
+    bottom: 10px; /* Adjust vertical position */
+    right: 20px; /* Adjust horizontal position */
+    font-size: 0.9rem; /* Optional: Slightly smaller font size */
+    color: #6c757d; /* Bootstrap default muted color */
+    text-align: right;
+}
+
+
